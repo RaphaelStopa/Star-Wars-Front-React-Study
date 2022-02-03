@@ -1,14 +1,39 @@
-import React, { SyntheticEvent } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {api} from './api/api'
+import CustomerService from './service/customer-service'
+import {User as nhass, User} from './model/user'
+
+
 
 function App() {
 
+  const [actionPlanItens, setActionPlanItens] = useState<User>()
+
+  //ver onde o context cai aqui
+  setActionPlanItens((state) =>({
+    ...state,
+    login: 'dsafasdf' //evento ou values
+  }))
+
+  // setState({
+  //   ...state,
+  //   [key]: value
+  // });
+
   const submit = async (e: SyntheticEvent) => {
   e.preventDefault();
-  console.log('fffooi')
-  await api.get('http://localhost:8080/api/force-users')
+
+
+
+
+
+  // CustomerService.save();
+
+
+  // console.log('fffooi')
+  // await api.get('http://localhost:8080/api/force-users')
   }
 
   return (
